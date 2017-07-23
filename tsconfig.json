@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "target": "es5",
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true
+  },
+  "include": [
+    "app/*.ts",
+    "app/**/*.ts",
+    "test/unit/*.ts",
+    "test/unit/**/*.ts",
+    "test/mocks/*.ts",
+    "test/mocks/**/*.ts",
+    "test/function/*.ts",
+    "test/function/**/*.ts",
+    "test/e2e/*.ts",
+    "test/e2e/**/*.ts",
+    "typings/*.d.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
