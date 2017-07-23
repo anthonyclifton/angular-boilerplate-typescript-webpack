@@ -7,7 +7,7 @@
   "license": "no license",
   "scripts": {
     "build": "webpack --progress --colors",
-    "integration": "./bashHelpers/run_protractor_tests.sh || true",
+    "integration": "./scripts/run_protractor_tests.sh || true",
     "lint": "tslint --type-check -p tsconfig.json -c tslint.json --force",
     "start": "webpack-dev-server --progress --colors --inline --hot",
     "start-extra": "node --max-old-space-size=8192 ./node_modules/.bin/webpack-dev-server --progress --colors --inline --hot",

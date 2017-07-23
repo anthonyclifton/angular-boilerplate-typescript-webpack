@@ -4,3 +4,11 @@ node_modules/
 tmp
 .DS_Store
 .idea
+
+/app/*.js
+/app/*.js.map
+/app/**/*.js
+/app/**/*.js.map
+
+/test/**/*.js
+/test/**/*.js.map
