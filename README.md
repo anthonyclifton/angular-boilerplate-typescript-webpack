@@ -19,14 +19,14 @@ You will need NodeJS and npm installed.
 Clone the `angular-boilerplate-typescript-webpack` repository using git:
 
 ```
-git clone https://github.com/something-something-something/angular-boilerplate-typescript-webpack.git angular-boilerplate-typescript-webpack
+git clone https://github.com/anthonyclifton/angular-boilerplate-typescript-webpack.git angular-boilerplate-typescript-webpack
 cd angular-boilerplate-typescript-webpack
 ```
 
 If you just want to start a new project without the `angular-boilerplate-typescript-webpack` commit history then you can do:
 
 ```
-git clone --depth=1 https://github.com/something-something-something/angular-boilerplate-typescript-webpack.git <your-project-name>
+git clone --depth=1 https://github.com/anthonyclifton/angular-boilerplate-typescript-webpack.git <your-project-name>
 ```
 
 The `depth=1` tells git to only pull down one commit worth of historical data.
