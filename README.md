@@ -60,7 +60,7 @@ this server is:
 npm start
 ```
 
-Now browse to the app at [`localhost:8000/index.html`][local-app-url].
+You can browse to the app at [`localhost:8000`][local-app-url].
 
 
 ## Directory Layout
@@ -96,16 +96,15 @@ e2e-tests/            --> end-to-end tests
 
 ## Testing
 
-There are two kinds of tests in the `angular-seed` application: Unit tests and end-to-end tests.
+There are two kinds of tests: Unit tests and end-to-end (protractor) tests.
 
 ### Running Unit Tests
 
-The `angular-seed` app comes preconfigured with unit tests. These are written in [Jasmine][jasmine],
+The app comes with some example unit tests. These are written in [Jasmine][jasmine],
 which we run with the [Karma][karma] test runner. We provide a Karma configuration file to run them.
 
 * The configuration is found at `karma.conf.js`.
-* The unit tests are found next to the code they are testing and have an `_test.js` suffix (e.g.
-  `view1_test.js`).
+* The unit tests are found in `test/unit`.
 
 The easiest way to run the unit tests is to use the supplied npm script:
 
@@ -131,12 +130,12 @@ npm run test-single-run
 <a name="e2e-testing"></a>
 ### Running End-to-End Tests
 
-The `angular-seed` app comes with end-to-end tests, again written in [Jasmine][jasmine]. These tests
+The boilerplate app comes with end-to-end tests, again written in [Jasmine][jasmine]. These tests
 are run with the [Protractor][protractor] End-to-End test runner. It uses native events and has
 special features for Angular applications.
 
 * The configuration is found at `e2e-tests/protractor-conf.js`.
-* The end-to-end tests are found in `e2e-tests/scenarios.js`.
+* The end-to-end tests are found in `tests/e2e`.
 
 Protractor simulates interaction with our web app and verifies that the application responds
 correctly. Therefore, our web server needs to be serving up the application, so that Protractor can
@@ -149,7 +148,7 @@ npm start
 ```
 
 In addition, since Protractor is built upon WebDriver, we need to ensure that it is installed and
-up-to-date. The `angular-seed` project is configured to do this automatically before running the
+up-to-date. The project is configured to do this automatically before running the
 end-to-end tests, so you don't need to worry about it. If you want to manually update the WebDriver,
 you can run:
 
@@ -161,7 +160,7 @@ Once you have ensured that the development web server hosting our application is
 can run the end-to-end tests using the supplied npm script:
 
 ```
-npm run protractor
+npm run integration
 ```
 
 This script will execute the end-to-end tests against the application being hosted on the
@@ -177,32 +176,17 @@ If JDK is not already installed, you can download it [here][jdk-download].
 
 ## Updating Angular
 
-Since the Angular framework library code and tools are acquired through package managers (npm and
-bower) you can use these tools to easily update the dependencies. Simply run the preconfigured
+Since the Angular framework library code and tools are acquired through package managers (npm)
+you can use these tools to easily update the dependencies. Simply run the preconfigured
 script:
 
 ```
 npm run update-deps
 ```
 
-This will call `npm update` and `bower update`, which in turn will find and install the latest
-versions that match the version ranges specified in the `package.json` and `bower.json` files
+This will call `npm update`, which in turn will find and install the latest
+versions that match the version ranges specified in the `package.json` file
 respectively.
-
-
-## Loading Angular Asynchronously
-
-The `angular-seed` project supports loading the framework and application scripts asynchronously.
-The special `index-async.html` is designed to support this style of loading. For it to work you must
-inject a piece of Angular JavaScript into the HTML page. The project has a predefined script to help
-do this:
-
-```
-npm run update-index-async
-```
-
-This will copy the contents of the `angular-loader.js` library file into the `index-async.html`
-page. You can run this every time you update the version of Angular that you are using.
 
 
 ## Serving the Application Files
@@ -213,24 +197,6 @@ web server during development to avoid issues with security restrictions (sandbo
 sandbox implementation varies between browsers, but quite often prevents things like cookies, XHR,
 etc to function properly when an HTML page is opened via the `file://` scheme instead of `http://`.
 
-### Running the App during Development
-
-The `angular-seed` project comes preconfigured with a local development web server. It is a Node.js
-tool called [http-server][http-server]. You can start this web server with `npm start`, but you may
-choose to install the tool globally:
-
-```
-sudo npm install -g http-server
-```
-
-Then you can start your own development web server to serve static files from a folder by running:
-
-```
-http-server -a localhost -p 8000
-```
-
-Alternatively, you can choose to configure your own web server, such as Apache or Nginx. Just
-configure your server to serve the files under the `app/` directory.
 
 ### Running the App in Production
 
@@ -249,15 +215,7 @@ backend server(s) and web server(s).
 
 ## Continuous Integration
 
-### Travis CI
-
-[Travis CI][travis] is a continuous integration service, which can monitor GitHub for new commits to
-your repository and execute scripts such as building the app or running tests. The `angular-seed`
-project contains a Travis configuration file, `.travis.yml`, which will cause Travis to run your
-tests when you push to GitHub.
-
-You will need to enable the integration between Travis and GitHub. See the
-[Travis website][travis-docs] for instructions on how to do this.
+### Future Development
 
 
 ## Contact
@@ -266,9 +224,7 @@ For more information on AngularJS please check out [angularjs.org][angularjs].
 
 
 [angularjs]: https://angularjs.org/
-[bower]: http://bower.io/
 [git]: https://git-scm.com/
-[http-server]: https://github.com/indexzero/http-server
 [jasmine]: https://jasmine.github.io/
 [jdk]: https://wikipedia.org/wiki/Java_Development_Kit
 [jdk-download]: http://www.oracle.com/technetwork/java/javase/downloads
@@ -278,5 +234,3 @@ For more information on AngularJS please check out [angularjs.org][angularjs].
 [npm]: https://www.npmjs.org/
 [protractor]: http://www.protractortest.org/
 [selenium]: http://docs.seleniumhq.org/
-[travis]: https://travis-ci.org/
-[travis-docs]: https://docs.travis-ci.com/user/getting-started
